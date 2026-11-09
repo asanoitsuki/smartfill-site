@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-label="スマートフィル">
+<rect width="1024" height="1024" rx="229" fill="#0f6b57"/>
+<g transform="rotate(7 512 512)">
+<rect x="209.5" y="232.5" width="575" height="665" rx="60" fill="#002819" opacity=".28"/>
+<rect x="204.5" y="214.5" width="575" height="665" rx="60" fill="#fbf6ea"/>
+<rect x="264.5" y="289.5" width="150" height="22" rx="11" fill="#9db8ae"/>
+<rect x="264.5" y="332.5" width="455" height="95" rx="26" fill="#ede5d0"/>
+<rect x="296.5" y="364.5" width="165" height="31" rx="15.5" fill="#0f6b57"/>
+<rect x="264.5" y="487.5" width="115" height="22" rx="11" fill="#9db8ae"/>
+<rect x="264.5" y="530.5" width="455" height="95" rx="26" fill="#ede5d0"/>
+<rect x="296.5" y="562.5" width="280" height="31" rx="15.5" fill="#0f6b57"/>
+<rect x="264.5" y="685.5" width="180" height="22" rx="11" fill="#9db8ae"/>
+<rect x="264.5" y="728.5" width="455" height="95" rx="26" fill="#ede5d0"/>
+<rect x="296.5" y="746.5" width="22" height="59" rx="11" fill="#0f6b57"/>
+</g>
+<circle cx="750" cy="300" r="165" fill="#f4b63f"/>
+<path d="M675 305L730 365L835 240" fill="none" stroke="#0f6b57" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

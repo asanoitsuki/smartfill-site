@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スマートフィル — フォームの入力を、ワンクリックで</title>
+  <meta name="description" content="Webフォームの欄を自動で見分けて、保存したプロフィールをワンクリックで入力する拡張機能。Chrome と Safari（Mac・iPhone）に対応。データは端末の中だけに保存されます。">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <style>
+    :root { --green:#0f6b57; --green-soft:#e3f1ec; --bg:#f4f2ec; --text:#1a2420; --muted:#5d6a63; --line:#e5e1d5; --gold:#f4b63f; }
+    @media (prefers-color-scheme: dark) { :root { --green:#4fc3a1; --green-soft:#12302a; --bg:#0e1311; --text:#eef3f0; --muted:#a3b0a8; --line:#27322d; } }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.8 -apple-system,"Hiragino Sans","Noto Sans JP",sans-serif; }
+    .wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+    header.site { padding:20px 0; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    header.site a.brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:800; font-size:18px; }
+    header.site img { width:36px; height:36px; border-radius:10px; }
+    nav a { color:var(--muted); text-decoration:none; margin-left:16px; font-size:14px; }
+    nav a:hover { color:var(--green); }
+    h1 { font-size:30px; line-height:1.4; margin:8px 0 12px; }
+    h2 { font-size:20px; margin:40px 0 10px; padding-left:10px; border-left:4px solid var(--green); }
+    p { margin:0 0 14px; }
+    .lead { font-size:18px; color:var(--muted); }
+    ul, ol { padding-left:1.4em; margin:0 0 14px; }
+    li { margin-bottom:6px; }
+    .card { background:var(--green-soft); border-radius:14px; padding:16px 18px; margin:16px 0; }
+    .btns { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0; }
+    .btn { display:inline-block; padding:10px 18px; border-radius:10px; background:var(--green); color:#fff; text-decoration:none; font-weight:700; }
+    .btn.ghost { background:transparent; color:var(--green); border:1.5px solid var(--green); }
+    a { color:var(--green); }
+    code { background:var(--green-soft); padding:1px 6px; border-radius:5px; font-size:14px; }
+    footer { margin:56px 0 32px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+    footer a { margin-right:14px; }
+    details { border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin-bottom:10px; background:rgba(255,255,255,.4); }
+    summary { cursor:pointer; font-weight:700; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./"><img src="icon.svg" alt="">スマートフィル</a>
+    <nav><a href="support.html">サポート</a><a href="privacy.html">プライバシー</a><a href="demo.html">試す</a></nav>
+  </header>
+
+  <main>
+    <h1>フォームの入力を、<br>ワンクリックで。</h1>
+    <p class="lead">氏名、住所、電話番号、学歴……。フォームのたびに同じことを入力していませんか？ スマートフィルは、ページの入力欄が「何を聞いているか」を見分けて、保存したプロフィールをまとめて入力します。</p>
+    <div class="btns"><a class="btn" href="demo.html">試用フォームで試す</a><a class="btn ghost" href="support.html">使い方・サポート</a></div>
+
+    <h2>できること</h2>
+    <ul>
+      <li><b>自動で見分けて入力</b> — 氏名・フリガナ・住所・電話番号・メール・学歴など、欄の意味を見分けます</li>
+      <li><b>入力前にプレビュー</b> — どの欄に何が入るかを確認して、修正してから入力できます</li>
+      <li><b>細かい指定にも対応</b> — 電話番号や郵便番号の分割欄、年月の選択欄、ひらがな／カタカナ、全角／半角に合わせます</li>
+      <li><b>相手ごとの文章</b> — 志望動機のように、相手ごとに違う文章を切り替えて入力できます</li>
+      <li><b>検索つきの選択欄</b> — 学校や高校を検索して選ぶタイプの欄にも対応します</li>
+    </ul>
+
+    <h2>安心して使えます</h2>
+    <div class="card">
+      <ul style="margin:0">
+        <li>プロフィールは、<b>お使いの端末の中にだけ</b>保存されます。サーバーへは送信しません</li>
+        <li>アカウント登録、広告、利用状況の解析はありません</li>
+        <li>送信ボタンは押しません。内容を確認して、ご自身で送信してください</li>
+        <li>押したときに開いているページだけが対象です</li>
+      </ul>
+    </div>
+
+    <h2>対応環境</h2>
+    <p>Google Chrome ／ Safari（Mac） ／ Safari（iPhone・iPad）。</p>
+    <p style="color:var(--muted)">すべてのフォームで完全に入力できるとは限りません。入力されなかった欄は、プレビューで項目を選ぶか、手で入力してください。</p>
+  </main>
+
+  <footer>
+    <a href="support.html">サポート</a><a href="privacy.html">プライバシーポリシー</a><a href="demo.html">試用フォーム</a>
+    <p style="margin-top:12px">© 2026 ITSUKI ASANO</p>
+  </footer>
+</div>
+</body>
+</html>

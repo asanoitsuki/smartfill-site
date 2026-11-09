@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スマートフィル 試用フォーム</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <style>
+    body { font: 14px/1.6 system-ui, "Hiragino Sans", sans-serif; margin: 0; padding: 24px; background: #f4f5f7; color: #222; }
+    h1 { font-size: 20px; margin: 0 0 4px; }
+    h2 { font-size: 16px; margin: 32px 0 8px; padding-left: 8px; border-left: 4px solid #2563eb; }
+    p.lead { margin: 0 0 16px; color: #555; }
+    form { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 16px; max-width: 860px; }
+    table.entry { width: 100%; border-collapse: collapse; }
+    table.entry th { width: 210px; text-align: left; vertical-align: top; background: #f0f3f8; padding: 8px 10px; border: 1px solid #dde2ea; font-weight: 600; }
+    table.entry td { padding: 8px 10px; border: 1px solid #dde2ea; }
+    .req { display: inline-block; font-size: 11px; color: #fff; background: #d33; border-radius: 3px; padding: 0 4px; margin-left: 4px; }
+    small { color: #777; }
+    textarea { width: 100%; box-sizing: border-box; }
+    .counter { font-size: 12px; color: #777; text-align: right; }
+    .field { display: grid; grid-template-columns: 180px 1fr; gap: 6px 12px; align-items: start; margin-bottom: 12px; }
+    .field label { font-weight: 600; padding-top: 4px; }
+    .field input, .field select, .field textarea { padding: 6px 8px; border: 1px solid #ccc; border-radius: 6px; font: inherit; }
+    .field .hint { grid-column: 2; font-size: 12px; color: #777; }
+    pre#state { background: #10151d; color: #b8f7c8; padding: 12px; border-radius: 8px; max-width: 860px; overflow: auto; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <p><a href="./">← スマートフィル</a></p>
+  <h1>試用フォーム</h1>
+  <p class="lead">スマートフィルの動作を確かめるためのページです。拡張機能（またはアプリ）にプロフィールを入れて「このページに自動入力」を押すと、下の欄に入力されます。<b>入力した内容は、どこにも送信されません。</b></p>
+
+  <h2>A. 表レイアウト（採用マイページ型）</h2>
+  <form id="entry-a" onsubmit="return false">
+    <table class="entry">
+      <tr><th>氏名<span class="req">必須</span></th><td>姓 <input name="f_0001" size="10"> 名 <input name="f_0002" size="10"></td></tr>
+      <tr><th>フリガナ<span class="req">必須</span></th><td>セイ <input name="f_0003" size="10"> メイ <input name="f_0004" size="10"> <small>※全角カタカナ</small></td></tr>
+      <tr><th>生年月日<span class="req">必須</span></th><td>
+        <select name="f_0005" id="birth-y"><option value="">----</option></select>年
+        <select name="f_0006" id="birth-m"><option value="">--</option></select>月
+        <select name="f_0007" id="birth-d"><option value="">--</option></select>日
+      </td></tr>
+      <tr><th>性別</th><td>
+        <label><input type="radio" name="sex" value="1"> 男性</label>
+        <label><input type="radio" name="sex" value="2"> 女性</label>
+        <label><input type="radio" name="sex" value="9"> 回答しない</label>
+      </td></tr>
+      <tr><th>郵便番号<span class="req">必須</span></th><td>〒 <input name="zip1" id="zip1" size="3" maxlength="3"> - <input name="zip2" id="zip2" size="4" maxlength="4"> <small>入力すると住所の一部が自動補完されます</small></td></tr>
+      <tr><th>都道府県<span class="req">必須</span></th><td><select name="pref" id="pref"><option value="">選択してください</option></select></td></tr>
+      <tr><th>住所1（市区町村・番地）<span class="req">必須</span></th><td><input name="addr1" id="addr1" size="40"></td></tr>
+      <tr><th>住所2（建物名・部屋番号）</th><td><input name="addr2" size="40"></td></tr>
+      <tr><th>住所（フリガナ）</th><td><input name="addr_kana" size="40"> <small>※全角カタカナ</small></td></tr>
+      <tr><th>携帯電話<span class="req">必須</span></th><td><input name="tel1" size="4"> - <input name="tel2" size="4"> - <input name="tel3" size="4"></td></tr>
+      <tr><th>メールアドレス<span class="req">必須</span></th><td><input name="f_0010" size="40"></td></tr>
+      <tr><th>メールアドレス（確認用）<span class="req">必須</span></th><td><input name="f_0011" size="40"></td></tr>
+      <tr><th>学校区分<span class="req">必須</span></th><td>
+        <select name="f_0012"><option value="">選択してください</option><option>大学院</option><option>大学</option><option>短期大学</option><option>高専</option><option>専門学校</option></select>
+      </td></tr>
+      <tr><th>学校名<span class="req">必須</span></th><td><input name="f_0013" size="40"></td></tr>
+      <tr><th>学校名（フリガナ）</th><td><input name="f_0013k" size="40"></td></tr>
+      <tr><th>学部・研究科</th><td><input name="f_0014" size="40"></td></tr>
+      <tr><th>学科・専攻</th><td><input name="f_0015" size="40"></td></tr>
+      <tr><th>指導教員</th><td><input name="f_0018" size="30"></td></tr>
+      <tr><th>入学年月</th><td>
+        <select name="f_0019y" id="adm-y"><option value="">----</option></select>年
+        <select name="f_0019m" id="adm-m"><option value="">--</option></select>月
+      </td></tr>
+      <tr><th>卒業予定年月<span class="req">必須</span></th><td>
+        <select name="f_0016" id="grad-y"><option value="">----</option></select>年
+        <select name="f_0017" id="grad-m"><option value="">--</option></select>月
+      </td></tr>
+      <tr><th>文理区分</th><td>
+        <label><input type="radio" name="bunri" value="b"> 文系</label>
+        <label><input type="radio" name="bunri" value="r"> 理系</label>
+      </td></tr>
+      <tr><th>研究テーマ<br><small>（50字以内）</small></th><td><input name="f_0020" size="60" maxlength="50"></td></tr>
+      <tr><th>研究内容<br><small>（400字以内）</small></th><td><textarea name="f_0021" rows="5" maxlength="400" data-counter></textarea><div class="counter"></div></td></tr>
+      <tr><th>学生時代に最も力を入れて取り組んだこと<br><small>（200字以内）</small></th><td><textarea name="f_0022" rows="5" data-counter></textarea><div class="counter"></div></td></tr>
+      <tr><th>自己PR<br><small>（300字以内）</small></th><td><textarea name="f_0023" rows="4" data-counter></textarea><div class="counter"></div></td></tr>
+      <tr><th>志望動機</th><td><textarea name="f_0024" rows="4" placeholder="企業ごとに記入してください"></textarea></td></tr>
+      <tr><th>保護者氏名</th><td><input name="f_0030" size="20"></td></tr>
+      <tr><th>個人情報の取り扱い</th><td><label><input type="checkbox" name="agree"> 同意する</label></td></tr>
+    </table>
+  </form>
+
+  <h2>C. 帰省先・保護者・学歴・資格（追加項目）</h2>
+  <form id="entry-c" onsubmit="return false">
+    <table class="entry">
+      <tr><th colspan="2">【帰省先（休暇中の連絡先）】</th></tr>
+      <tr><td colspan="2"><label><input type="checkbox" name="same_as_current"> 現住所と同じ</label></td></tr>
+      <tr><th>郵便番号</th><td>〒 <input name="k_zip1" size="3" maxlength="3"> - <input name="k_zip2" size="4" maxlength="4"></td></tr>
+      <tr><th>都道府県</th><td><select name="k_pref" id="k-pref"><option value="">選択してください</option></select></td></tr>
+      <tr><th>住所</th><td><input name="k_addr" size="40"></td></tr>
+      <tr><th>電話番号</th><td><input name="k_tel" size="20"></td></tr>
+      <tr><th colspan="2">【保護者の連絡先】</th></tr>
+      <tr><th>氏名</th><td><input name="p_name" size="20"></td></tr>
+      <tr><th>電話番号</th><td><input name="p_tel" size="20"></td></tr>
+    </table>
+
+    <h3>学歴</h3>
+    <table class="entry">
+      <tr><th>区分</th><th>学校名</th><th>入学年月</th><th>卒業年月</th></tr>
+      <tr><th>中学校</th><td><input name="h_jhs" size="20"></td><td>-</td><td><input name="h_jhs_grad" size="10" placeholder="2020/03"></td></tr>
+      <tr><th>高等専門学校（本科）</th><td><input name="h_prev" size="20"></td><td><input name="h_prev_adm" size="10" placeholder="2020/04"></td><td><input name="h_prev_grad" size="10" placeholder="2025/03"></td></tr>
+    </table>
+
+    <h3>資格・スキル</h3>
+    <table class="entry">
+      <tr><th>運転免許</th><td><label><input type="radio" name="license" value="1"> 有</label> <label><input type="radio" name="license" value="0"> 無</label></td></tr>
+      <tr><th>英検</th><td><select name="eiken"><option value="">なし</option><option>1級</option><option>準1級</option><option>2級</option><option>準2級</option><option>3級</option></select></td></tr>
+      <tr><th>TOEIC スコア</th><td><input name="toeic" size="6" inputmode="numeric"> 点</td></tr>
+      <tr><th>資格・免許</th><td><textarea name="license_all" rows="4"></textarea></td></tr>
+      <tr><th>使用できるプログラミング言語</th><td><input name="prog" size="40"></td></tr>
+    </table>
+
+    <h3>その他</h3>
+    <table class="entry">
+      <tr><th>長所</th><td><textarea name="strong" rows="2"></textarea></td></tr>
+      <tr><th>短所</th><td><textarea name="weak" rows="2"></textarea></td></tr>
+      <tr><th>アルバイト経験</th><td><textarea name="baito" rows="2"></textarea></td></tr>
+      <tr><th>留学経験の有無</th><td><label><input type="radio" name="abroad" value="y"> 有</label> <label><input type="radio" name="abroad" value="n"> 無</label></td></tr>
+      <tr><th>趣味・特技</th><td><textarea name="hobby" rows="2"></textarea></td></tr>
+      <tr><th>ポートフォリオ URL</th><td><input name="pf_url" type="url" size="40"></td></tr>
+      <tr><th>個人情報の取り扱い</th><td><label><input type="checkbox" name="agree_c"> 同意する</label></td></tr>
+    </table>
+  </form>
+
+  <h2>B. ラベル＋placeholder（SPA 型）</h2>
+  <form id="entry-b" onsubmit="return false">
+    <div class="field"><label for="b-name">お名前</label><input id="b-name" placeholder="山田 太郎"></div>
+    <div class="field"><label for="b-kana">ふりがな</label><input id="b-kana" placeholder="やまだ たろう"></div>
+    <div class="field"><label for="b-email">Email</label><input id="b-email" type="email" autocomplete="email"></div>
+    <div class="field"><label for="b-tel">電話番号（ハイフンなし）</label><input id="b-tel" type="tel" inputmode="numeric"></div>
+    <div class="field"><label for="b-zip">郵便番号</label><input id="b-zip" autocomplete="postal-code" placeholder="1000005"></div>
+    <div class="field"><label for="b-addr">住所</label><input id="b-addr" placeholder="都道府県から入力"></div>
+    <div class="field"><label for="b-birth">生年月日</label><input id="b-birth" type="date"></div>
+    <div class="field"><label for="b-gender">性別</label>
+      <select id="b-gender"><option value="">選択</option><option value="m">男性（Male）</option><option value="f">女性（Female）</option><option value="x">回答しない</option></select>
+    </div>
+    <div class="field"><label for="b-school">大学名</label><input id="b-school"></div>
+    <div class="field"><label for="b-fd">学部学科</label><input id="b-fd"></div>
+    <div class="field"><label for="b-grad">卒業予定</label><input id="b-grad" type="month"></div>
+    <div class="field"><label for="b-gakuchika">学生時代に力を入れたこと</label><textarea id="b-gakuchika" rows="4" maxlength="200"></textarea><span class="hint">200字以内</span></div>
+  </form>
+
+  
+
+  <script>
+    // 選択肢を生成
+    const fillOptions = (id, from, to, suffix = '') => {
+      const sel = document.getElementById(id);
+      for (let i = from; i <= to; i++) sel.add(new Option(i + suffix, String(i).padStart(2, '0')));
+    };
+    fillOptions('birth-y', 1995, 2010);
+    fillOptions('birth-m', 1, 12);
+    fillOptions('birth-d', 1, 31);
+    fillOptions('grad-y', 2025, 2030, '年');
+    fillOptions('grad-m', 1, 12, '月');
+    const PREFS = '北海道 青森県 岩手県 宮城県 秋田県 山形県 福島県 茨城県 栃木県 群馬県 埼玉県 千葉県 東京都 神奈川県 新潟県 富山県 石川県 福井県 山梨県 長野県 岐阜県 静岡県 愛知県 三重県 滋賀県 京都府 大阪府 兵庫県 奈良県 和歌山県 鳥取県 島根県 岡山県 広島県 山口県 徳島県 香川県 愛媛県 高知県 福岡県 佐賀県 長崎県 熊本県 大分県 宮崎県 鹿児島県 沖縄県'.split(' ');
+    PREFS.forEach((p, i) => document.getElementById('pref').add(new Option(p, String(i + 1))));
+    PREFS.forEach((p, i) => document.getElementById('k-pref').add(new Option(p, String(i + 1))));
+    fillOptions('adm-y', 2018, 2030, '年');
+    fillOptions('adm-m', 1, 12, '月');
+
+    // 文字数カウンター（input イベントが届いているかの確認用）
+    document.querySelectorAll('[data-counter]').forEach((ta) => {
+      const out = ta.nextElementSibling;
+      const update = () => { out.textContent = `${[...ta.value].length}字`; };
+      ta.addEventListener('input', update);
+      update();
+    });
+
+    // ajaxzip3 風の住所自動補完: 郵便番号が揃うと 300ms 後に都道府県と住所1の一部を書き込む
+    const zip2 = document.getElementById('zip2');
+    zip2.addEventListener('change', () => {
+      if (document.getElementById('zip1').value + zip2.value !== '1000005') return;
+      setTimeout(() => {
+        document.getElementById('pref').value = '13';
+        document.getElementById('addr1').value = '千代田区丸の内';
+      }, 300);
+    });
+
+    // B: 制御フォームのように、イベント経由でだけ状態を更新する
+  </script>
+</body>
+</html>

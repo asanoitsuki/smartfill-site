@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スマートフィル サポート</title>
+  <meta name="description" content="スマートフィルの使い方、よくある質問、お問い合わせ。">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <style>
+    :root { --green:#0f6b57; --green-soft:#e3f1ec; --bg:#f4f2ec; --text:#1a2420; --muted:#5d6a63; --line:#e5e1d5; --gold:#f4b63f; }
+    @media (prefers-color-scheme: dark) { :root { --green:#4fc3a1; --green-soft:#12302a; --bg:#0e1311; --text:#eef3f0; --muted:#a3b0a8; --line:#27322d; } }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font:16px/1.8 -apple-system,"Hiragino Sans","Noto Sans JP",sans-serif; }
+    .wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+    header.site { padding:20px 0; display:flex; align-items:center; justify-content:space-between; gap:12px; }
+    header.site a.brand { display:flex; align-items:center; gap:10px; color:var(--text); text-decoration:none; font-weight:800; font-size:18px; }
+    header.site img { width:36px; height:36px; border-radius:10px; }
+    nav a { color:var(--muted); text-decoration:none; margin-left:16px; font-size:14px; }
+    nav a:hover { color:var(--green); }
+    h1 { font-size:30px; line-height:1.4; margin:8px 0 12px; }
+    h2 { font-size:20px; margin:40px 0 10px; padding-left:10px; border-left:4px solid var(--green); }
+    p { margin:0 0 14px; }
+    .lead { font-size:18px; color:var(--muted); }
+    ul, ol { padding-left:1.4em; margin:0 0 14px; }
+    li { margin-bottom:6px; }
+    .card { background:var(--green-soft); border-radius:14px; padding:16px 18px; margin:16px 0; }
+    .btns { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0; }
+    .btn { display:inline-block; padding:10px 18px; border-radius:10px; background:var(--green); color:#fff; text-decoration:none; font-weight:700; }
+    .btn.ghost { background:transparent; color:var(--green); border:1.5px solid var(--green); }
+    a { color:var(--green); }
+    code { background:var(--green-soft); padding:1px 6px; border-radius:5px; font-size:14px; }
+    footer { margin:56px 0 32px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
+    footer a { margin-right:14px; }
+    details { border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin-bottom:10px; background:rgba(255,255,255,.4); }
+    summary { cursor:pointer; font-weight:700; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./"><img src="icon.svg" alt="">スマートフィル</a>
+    <nav><a href="support.html">サポート</a><a href="privacy.html">プライバシー</a><a href="demo.html">試す</a></nav>
+  </header>
+
+  <main>
+    <h1>サポート</h1>
+    <p class="lead">使い方とよくある質問です。解決しないときは、下のメールアドレスへご連絡ください。</p>
+
+    <h2>はじめかた</h2>
+    <h3 style="margin:18px 0 6px">iPhone（Safari）</h3>
+    <ol>
+      <li>アプリ「スマートフィル」を開き、「プロフィール」に氏名などを入力します。</li>
+      <li>設定アプリ →「アプリ」→「Safari」→「機能拡張」→「スマートフィル」をオンにし、アクセスを許可します。</li>
+      <li>Safari で入力したいページを開き、アドレスバー左の<b>ページメニュー</b>から「スマートフィル」→「このページに自動入力」を押します。</li>
+    </ol>
+    <h3 style="margin:18px 0 6px">Mac（Safari）</h3>
+    <ol>
+      <li>アプリ「スマートフィル」を一度開き、Safari →「設定」→「機能拡張」で「スマートフィル」にチェックを入れます。</li>
+      <li>入力したいページで、ツールバーのスマートフィルのボタンを押します（初回はサイトへのアクセスを許可してください）。</li>
+      <li>「プロフィール」に入力して、「このページに自動入力」を押します。</li>
+    </ol>
+    <h3 style="margin:18px 0 6px">Chrome</h3>
+    <ol>
+      <li>拡張機能を追加し、ツールバーのパズルのアイコンからスマートフィルを固定します。</li>
+      <li>アイコンを押して「プロフィール」に入力し、入力したいページで「このページに自動入力」を押します。ショートカットは <code>Option+Shift+F</code>（Windows は <code>Alt+Shift+F</code>）です。</li>
+    </ol>
+    <p>まず <a href="demo.html">試用フォーム</a> で動きを確かめられます（入力した内容は送信されません）。</p>
+
+    <h2>よくある質問</h2>
+    <details><summary>入力されない欄があります</summary><p>欄の名前や選択肢がページによってさまざまなため、すべては見分けられません。「先にプレビューで確認」で、欄に入れる項目を選び直すことができます。</p></details>
+    <details><summary>データはどこに保存されますか？</summary><p>お使いの端末の中だけです（Chrome・Safari の拡張機能用の保存領域、iPhone ではアプリと機能拡張が共有する端末内の領域）。サーバーへは送信しません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p></details>
+    <details><summary>データを消すには？</summary><p>アプリのプロフィール画面で内容を消すか、拡張機能・アプリを削除してください。端末内のデータもすべて削除されます。</p></details>
+    <details><summary>送信ボタンも押してくれますか？</summary><p>いいえ。入力だけを行います。内容を確認して、ご自身で送信してください。</p></details>
+    <details><summary>Safari で「アクセスする許可がありません」と出ます</summary><p>Safari は、サイトごとに拡張機能へのアクセスを許可する必要があります。ページメニューまたはツールバーのスマートフィルのボタンから、そのサイトへのアクセスを許可してください。</p></details>
+    <details><summary>プロフィールを別の端末に移したい</summary><p>プロフィール画面の「書き出し」でファイルを作り、別の端末の「読み込み」で取り込めます。</p></details>
+
+    <h2>お問い合わせ</h2>
+    <div class="card"><p style="margin:0">メール: <a href="mailto:9n9b25qtpq@privaterelay.appleid.com">9n9b25qtpq@privaterelay.appleid.com</a></p></div>
+    <p style="color:var(--muted)">お問い合わせには、お使いの環境（Chrome / Safari、Mac / iPhone）と、うまくいかなかったページの種類を書いていただけると助かります。氏名や住所などの個人情報は、メールに書かないでください。</p>
+  </main>
+
+  <footer>
+    <a href="support.html">サポート</a><a href="privacy.html">プライバシーポリシー</a><a href="demo.html">試用フォーム</a>
+    <p style="margin-top:12px">© 2026 ITSUKI ASANO</p>
+  </footer>
+</div>
+</body>
+</html>
